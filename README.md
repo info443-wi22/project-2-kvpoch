@@ -9,3 +9,5 @@ Chart.js is an open-source JavaScript library for creating data visualizations. 
 Who created the software, and who currently "maintains" it?
 (Was it developed by a large company or an independent developer?
  Who seems to be in charge of approving changes to its code/architecture?)
+
+Chart.js was originally created by developer Nick Downie in 2013. It is now open for contribution by the entire developer community, but a dedicated Chart.js team of seven people is in charge of approving changes.
