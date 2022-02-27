@@ -71,7 +71,18 @@ Tests should pass in both browsers. If it is not, try hiding all scales, disable
 
 ## Applied Perspective
 
+We’ve chosen to apply the **evolution** perspective. The evolution perspective aims for a system that is adaptable amongst the inevitable changes that all systems eventually face. It also strives for a system that balances the costs associated with supporting this adaptability. Although these qualities are desirable in practically any system, they’re especially important for Chart.js. Being the second most popular JavaScript charting library, it’s depended on by a wide variety of users, which all introduce a different technology level that must be accommodated by Chart.js. Since its first release in 2014, the library has undergone over 80 releases to keep up with this demand.
+
+One concern that this perspective brings to Chart.js is that there are **changes driven by external factors**. ECMAScript (ES), the standardized version of JavaScript, is updated every year by an external organization, Ecma International. Thus, Chart.js has had to accommodate seven new versions of JavaScript during its deployment. Since the developers of Chart.js don’t directly contribute to the standardization process at Ecma International, this forces the library to adapt to changes that could potentially completely change their system.
+
+Another concern of this perspective with Chart.js is the **reliability of change**. Since the software is open-sourced and open to contribution by anybody, this introduces a lot of variability in proposed changes. Compounded with the aforementioned everchanging ECMAScript, the wide variety of contributors will possess differing levels of knowledge about the most recent ES version, which could potentially create conflicting change proposals. Fortunately, Chart.js tries to alleviate this concern with official documentation on how to contribute to the library, as well as a folder of automated tests.
+
+
 ## Identify Styles & Patterns
+
+Chart.js is developed using the **Model-View-Controller** style. Charts are rendered in the View, the web browser. There are interactive elements (such as buttons) also rendered alongside the charts in the View that tell the Controller some sort of instruction when interacted with. For example, there could be a button labeled to select a different data set to render. The Controller gives these instructions to the Model, which handles any sort of manipulation of the state/charts (ex: changing from a bar to line graph). The Controller then tells the View to re-render the state/charts using the new state created by the Model.
+
+Chart.js uses the **strategy** design pattern to create line segments. There are two line segmentation strategies: [(regular) pathSegment](https://github.com/chartjs/Chart.js/blob/6a6693e26dc190acff9426174256bfe730f09629/src/elements/element.line.js#L68) and [fastPathSegment](https://github.com/chartjs/Chart.js/blob/6a6693e26dc190acff9426174256bfe730f09629/src/elements/element.line.js#L115). The interface [_getSegmentMethod](https://github.com/chartjs/Chart.js/blob/6a6693e26dc190acff9426174256bfe730f09629/src/elements/element.line.js#L182) decides which method to use based on a few criteria, such as if the line is decimated. Regardless of the method chosen, the segmentation method will take in the parameters ctx, line, segment, and params to create the segment.
 
 ## Architectural Assessment
 
