@@ -100,3 +100,10 @@ Another OOP design principle that is important and one of the main ideas of obje
 Another example of this is for the `DatasetController` class and all the classes that inherit it. The `DatasetController` controls the data while there are other classes such as `LineController`, `BarController`, etc that extend this class. In order to create these different type of charts and chart controllers, the `DatasetController` does not need to be touched or modified; instead, there are other classes that create extensions to it.
 
 ## System Improvement
+
+|Changes Made| Why|
+|--|--|
+|Refactoring: Rename Variable|A vague variable was previously named “o” in `element.arc.js`. This variable name is too obscure for viewers, giving them a more difficult time to understand the intent of this variable and how it contributes to the system. After investigating for quite a bit, this variable looks like it returns an object of numbers given to compute limits for the outer radius of the pie chart’s arc. Therefore this variable was renamed to be `RadiusCornersObj`. |
+|
+|
+|
