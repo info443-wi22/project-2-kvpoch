@@ -69,6 +69,16 @@ This system also has image-based testing to make sure that a chart is matching t
 
 Tests should pass in both browsers. If it is not, try hiding all scales, disable animations, adjust tolerance and/or threshold at the beginning of the JSON file to be as low as possible.
 
+For **bugs and issues**, they are reported on the issues tab at https://github.com/chartjs/Chart.js and used to improve and create further tests to check the functionality of the library.
+
+If a user wants to report a bug, they should:
+- check if it's already an existing issue
+- isolate the problem to a simple test case
+- include a demonstration of the bug on a website such as https://jsbin.com/ or https://codepen.io/pen/
+
+
+All this information is from the `chart.js` documentation and available to learn more at https://www.chartjs.org/docs/latest/.
+
 ## Applied Perspective
 
 We’ve chosen to apply the **evolution** perspective. The evolution perspective aims for a system that is adaptable amongst the inevitable changes that all systems eventually face. It also strives for a system that balances the costs associated with supporting this adaptability. Although these qualities are desirable in practically any system, they’re especially important for Chart.js. Being the second most popular JavaScript charting library, it’s depended on by a wide variety of users, which all introduce a different technology level that must be accommodated by Chart.js. Since its first release in 2014, the library has undergone over 80 releases to keep up with this demand.
@@ -87,7 +97,7 @@ Chart.js uses the **strategy** design pattern to create line segments. There are
 This system uses the **adapter** design pattern, especially when dealing with time variables and creating chart scales measured in time. Dates and times are often values that need to be reformatted in a way the system and client expects or understands. The `core.adapters.js` module exports the `DateAdapter` interface, which has functions that convert or format the given time values in a way that allows other interfaces to use them. The [`determineUnitForFormatting`](https://github.com/chartjs/Chart.js/blob/6a6693e26dc190acff9426174256bfe730f09629/src/scales/scale.time.js#L110) function is an example of how a different interface can use a function from the `DateAdapter` interface to fulfill its intended purpose, which otherwise could not have been done without an adapter. The `determineUnitForFormatting` function uses the `adapter.diff` function to return the number of units between the given timestamps.
 
 
-This system uses the **decorator** pattern. An example of where this pattern is used is the [`parseObjectData`](https://github.com/chartjs/Chart.js/blob/6a6693e26dc190acff9426174256bfe730f09629/src/controllers/controller.polarArea.js#L25) function. This function processes its existing data object by calling another function (`parseObjectDataRadialScale`)  by binding to create a new data object. This function wrapped itself up to add an additional responsibility in creating its object, which provides more flexibility in the structural design. 
+This system uses the **decorator** pattern. An example of where this pattern is used is the [`parseObjectData`](https://github.com/chartjs/Chart.js/blob/6a6693e26dc190acff9426174256bfe730f09629/src/controllers/controller.polarArea.js#L25) function. This function processes its existing data object by calling another function (`parseObjectDataRadialScale`)  by binding to create a new data object. This function wrapped itself up to add an additional responsibility in creating its object, which provides more flexibility in the structural design.
 
 
 ## Architectural Assessment
