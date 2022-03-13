@@ -99,6 +99,9 @@ Another OOP design principle that is important and one of the main ideas of obje
 
 Another example of this is for the `DatasetController` class and all the classes that inherit it. The `DatasetController` controls the data while there are other classes such as `LineController`, `BarController`, etc that extend this class. In order to create these different type of charts and chart controllers, the `DatasetController` does not need to be touched or modified; instead, there are other classes that create extensions to it.
 
+One of the SOLID Principles of class design is the **Dependency Inversion Principle (DIP)**, which is when high level modules do not depend on low-level modules. One example of how the `Chart.js` system adheres to this principle is the [`index.js`](https://github.com/kvpoch/Chart.js/blob/master/src/index.js) module in the `src` folder. All the modules in the `src` folder export particular interfaces that other modules and the  `index.js` will import, without having to worry about the details inside those modules. The `index.js` module acts as a way to manage the abstractions and as a place for other modules to communicate so that it can bring everything together and export the charts made. An specific example of how this system _violates_ DIP is the [`element.arc.js`](https://github.com/kvpoch/Chart.js/blob/master/src/elements/element.arc.js#L1) module. `Element.arc.js` simply depends on importing different functions from different modules. There is no “middle man” that manages the abstractions or acts as a point of communication or modification between modules. It just simply imports the `Element` function to implement inheritance to create a more specific version, known as the `ArcElement`. 
+
+
 ## System Improvement
 
 |Changes Made| Why|
