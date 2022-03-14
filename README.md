@@ -46,28 +46,17 @@ This system mostly has a source code structure that mirrors the component struct
 **Testing and Configuration**
 
 
+
 This system has automated testing integrated into the code for developers and contributors to use.  They use it to test their code and check that is passes `eslint` code standards. After using `npm install` to install node and npm, running `npm test` will run both the linter and tests.
 
 |![npm commands](./images/npm_test.png)|
 |:--:|
 | _Figure 3: `npm` commands to perform tests_|
-> These are the following commands that are now available from the repository root. `npm run dev `and `npm test` can be appended with a string that is used to match the spec filenames. For example: `npm run dev plugins`. When dealing with the documentation Markdown files, to run doc server locally, run `npm run docs:dev`.
+> These are the following commands that are now available from the repository root. `npm run dev `and `npm test` can be appended with a string that is used to match the spec filenames.
 
 
-This system also has image-based testing to make sure that a chart is matching the expected image pixel-by-pixel.
+This system also has image-based testing to make sure that a chart is matching the expected image pixel-by-pixel. The instructions to create a new image-based test can be found under the "Image-Based Tests" section here: https://www.chartjs.org/docs/latest/developers/contributing.html
 
-**Steps to create a new image-based test:**
-
-- Create a JS file or JSON file that defines chart config and generation options.
-- Add this file in `test/fixtures/{spec.name}/{feature-name}.json`.
-- Add a describe line to the beginning of `test/specs/{spec.name}.tests.js` if it doesn't exist yet.
-- Run `npm run dev`.
-- Click the "_Debug_" button (top/right): a test should fail with the associated canvas visible.
-- Right click on the chart and "Save image as..." `test/fixtures/{spec.name}/{feature-name}.png` making sure not to activate the tooltip or any hover functionality
-- Refresh the browser page `(CTRL+R)`: test should now pass
-- Verify test relevancy by changing the feature values slightly in the JSON file.
-
-Tests should pass in both browsers. If it is not, try hiding all scales, disable animations, adjust tolerance and/or threshold at the beginning of the JSON file to be as low as possible.
 
 For **bugs and issues**, they are reported on the issues tab at https://github.com/chartjs/Chart.js and used to improve and create further tests to check the functionality of the library.
 
