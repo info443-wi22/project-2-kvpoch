@@ -1,4 +1,4 @@
-# INFO 443 Project 2 (chart.js)
+# INFO 443 Project 2 (Chart.js)
 
 ## Context and Background
 
@@ -33,19 +33,15 @@ _What modules (components) comprise the system, how are they organized, and how 
 
 This text refers to the UML Component Diagram Part 1 and UML Component Diagram Part 2 and explains each architectural component of the system.
 
-The _types_ folder contains tests and `helper` components that use typeScript to create object types, which is given to the `helpers.core.js` of the _src_ folder, a required interface.
-The `helper` components of the _src_ folder has helper functions that aid other modules to perform their work. The `core` components contain the foundation functions to create charts. Both `core` and `helper` components deal with handling the data and both are the provided interfaces for the rest of the components in the `src` folder. The `controller` components control or manage the data for each different type of chart.  The `element` components do the work of computing the mathematical attributes for charts with arc, line, point and bar attributes. The `platform` components sets up the platform for the chart. The `scale` components compute the chart scales for time series, logarithmic, linear, category and more. The `plugin` components deal with the chart attributes, like title, subtitle, Tooltip, legend, and more. All of these components are provided interfaces for the `index.js`, which brings everything all together and exports the chart made. The _test_ folder and its components are a required interfaces for the `index.js` from the _src_ folder. In the _test_ folder, the `fixtures` set up the environment for testing and `specs` are the actual automated tests. There is the `docs` folder that contains all documentation Markdown files, which are then published with Vuepress.
+The `types` directory contains tests and `helper` components that use TypeScript to create object types, which is given to the `helpers.core.js` of the `src` folder, a required interface.
+The `helper` components of the `src` folder has helper functions that aid other modules to perform their work. The `core` components contain the foundation functions to create charts. Both `core` and `helper` components deal with handling the data and both are the provided interfaces for the rest of the components in the `src` folder. The `controller` components control or manage the data for each different type of chart.  The `element` components do the work of computing the mathematical attributes for charts with arc, line, point and bar attributes. The `platform` components sets up the platform for the chart. The `scale` components compute the chart scales for time series, logarithmic, linear, category and more. The `plugin` components deal with the chart attributes, like title, subtitle, Tooltip, legend, and more. All of these components are provided interfaces for the `index.js`, which brings everything all together and exports the chart made. The `test` folder and its components are a required interfaces for the `index.js` from the `src` folder. In the `test` folder, the `fixtures` set up the environment for testing and `specs` are the actual automated tests. There is the `docs` folder that contains all documentation Markdown files, which are then published with Vuepress.
 
 
 **Source Code Structure**
 
-This textual description discusses the high-level codeline model, which focuses on where and how the components are organized in which files.
-
 This system mostly has a source code structure that mirrors the component structure. This means architectural elements (components) have a one-to-one relationship with code modules (files).
 
 **Testing and Configuration**
-
-
 
 This system has automated testing integrated into the code for developers and contributors to use.  They use it to test their code and check that is passes `eslint` code standards. After using `npm install` to install node and npm, running `npm test` will run both the linter and tests.
 
@@ -58,7 +54,7 @@ This system has automated testing integrated into the code for developers and co
 This system also has image-based testing to make sure that a chart is matching the expected image pixel-by-pixel. The instructions to create a new image-based test can be found under the "Image-Based Tests" section here: https://www.chartjs.org/docs/latest/developers/contributing.html
 
 
-For **bugs and issues**, they are reported on the issues tab at https://github.com/chartjs/Chart.js and used to improve and create further tests to check the functionality of the library.
+For **bugs and issues**, there are reported on the issues tab at https://github.com/chartjs/Chart.js that are used to improve and create further tests to check the functionality of the library.
 
 If a user wants to report a bug, they should:
 - check if it's already an existing issue
@@ -66,7 +62,7 @@ If a user wants to report a bug, they should:
 - include a demonstration of the bug on a website such as https://jsbin.com/ or https://codepen.io/pen/
 
 
-All this information is from the `chart.js` documentation and available to learn more at https://www.chartjs.org/docs/latest/.
+Users must request commit access to the project through the GitHub or the Chart.js Slack. All this information is from the `chart.js` documentation and available to learn more at https://www.chartjs.org/docs/latest/.
 
 ## Applied Perspective
 
