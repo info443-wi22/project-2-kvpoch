@@ -99,7 +99,7 @@ This system uses the **adapter** design pattern, especially when dealing with ti
 
 This system uses the **decorator** pattern. An example of where this pattern is used is the [`parseObjectData`](https://github.com/chartjs/Chart.js/blob/6a6693e26dc190acff9426174256bfe730f09629/src/controllers/controller.polarArea.js#L25) function. This function processes its existing data object by calling another function (`parseObjectDataRadialScale`)  by binding to create a new data object. This function wrapped itself up to add an additional responsibility in creating its object, which provides more flexibility in the structural design.
 
-This system uses a **proxy** design pattern within multiple components. For example, when a user is creating a bar chart and wants to put a border around the bars, the border function includes a proxy that has a placeholder/default options that creates a border around the bars with `BorderWidth` and `BorderColor`.
+This system uses a **proxy** design pattern within multiple components. For example, when a user is creating a bar chart and wants to put a border around the bars, the border function includes a proxy that has a placeholder/default option. This placeholder creates a border around the bars with `BorderWidth` and `BorderColor`.
 
 
 ## Architectural Assessment
