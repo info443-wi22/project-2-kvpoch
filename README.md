@@ -6,7 +6,7 @@
 
 `Chart.js` is an open-source JavaScript library for creating data visualizations. It can visualize your data in eight different ways, each of them animated, customizable, and responsive. It is great at rendering performance across modern browsers.
 
-**Who created the software, and who currently "maintains" it? Was it developed by a large company or an independent developer? Who seems to be in charge of approving changes to its code/architecture?)**
+**Who created the software, and who currently "maintains" it? Was it developed by a large company or an independent developer? Who seems to be iÂn charge of approving changes to its code/architecture?)**
 
 `Chart.js` was originally created by developer Nick Downie in 2013. It is now open for contribution by the entire developer community, but a dedicated `Chart.js` team of seven people is in charge of approving changes.
 
@@ -128,4 +128,5 @@ Finally, this system follows the Liskov Substitution Principle - the principle t
 |Refactoring: Rename Variable|A vague variable was previously named “o” in `element.arc.js`. This variable name is too obscure for viewers, giving them a more difficult time to understand the intent of this variable and how it contributes to the system. After investigating for quite a bit, this variable looks like it returns an object of numbers given to compute limits for the outer radius of the pie chart’s arc. Therefore this variable was renamed to be `RadiusCornersObj`. |
 | Refactoring: Remove setting method | `plugin.legend.js` contains the method [`setDimensions`](https://github.com/chartjs/Chart.js/blob/285d84515989a6ce4488a2702ba7ede58a7498e6/src/plugins/plugin.legend.js#L84). However, dimensions will most likely will not need to be altered after the first instantiation of a `Legend` component. Removing the setting method will make the dimensions immutable, or in the other words, will remove the possibility of them accidentally being changed later on. Instead, the dimensions can be inserted as a parameter when first creating a `Legend`. |
 | Refactoring: Replace Inline Code with Function Call | In `core.animator.js`, [`draw`](https://github.com/chartjs/Chart.js/blob/285d84515989a6ce4488a2702ba7ede58a7498e6/src/core/core.animator.js#L66) is explicitly instantiated to be false. It is determined to be true or not through a for loop that checks each element in an array against a conditional. This could be condensed by declaring `draw` equal to that conditional. This makes it easier to follow along what `draw` represents, and makes `draw` more easily modifiable, since you won't have to hunt down each instance of `draw` being modified in an external function.
-|
+| Refactoring: Remove Middle Man | sdjfskd |
+| Refactoring: Remove Middle Man | sdjfskd |
